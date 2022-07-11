@@ -1,0 +1,324 @@
+#Git,#,name,operation,seperation,keyword/source,refactor,stat,values,Output,type,our,function,Code or Formular in Python,Formular for LaTeX paper,Our description,comments,#=>,OurPaper2019,competition paper,#=>,Rigas2018 name
+1,,,,,,,,angular,,,190513,angle_between_first_and_last_points,,,,,,,,,
+2,,,,,,,,angular,,,190513,angle_with_previous_fix,,,,,,,,,
+3,,,,,,,,angular,,,190513,angle_btw_2consecutive_points_in_vector,,,,,,,,,
+4,,,,,,,,angular,,,190513,angle_among_3consecutive_Points,,,,,,,,,
+5,,,,,acceleration,,,angular,,,190513,calculate_derivation,(ang_{vel}(i) - ang_{vel}(i-1)) * sampleRate,,Angular Acceleration,,,,,,
+6,,,,,velocity,,,,2D,,190513,calculate_derivation,"(xy(i,:) - xy(i-1,:)) * sampleRate",,Velocity,,,,,,
+7,,,,,distance,,,,1D,,190513,calculate_distance_vector,\sqrt{(x_i-x_{i-1})^2+(y_i-y_{i-1})^2},,Distances,,,,,,
+8,,,,,distance total,,,,0D,,190514,total_length,\sum(x_i),,Total length on one axes,this is only 1D?,,,,,
+9,,,,,distance,,,,0D,,190514,distance_between_first_and_last_points,\sqrt{(x_n-x_0)^2+(y_n-y_0)^2},,Total path length,,,,,,
+10,,,,,distance,,,,2D,,190514,distance_from_previous_fix_or_sacc,\sqrt{(\bar{x}-\bar{x}_{prev})^2+(\bar{y}-\bar{y}_{prev})^2},,Distance between centers of two position groups,,,,,,
+11,,statistics_Rigas18,,,,,,,0Dx6,,,,"mean,median,std,iq-range,skew,kurtosis",,,This sounds reasonable,,,,,From this paper
+12,,,,,,,,,0Dx6,,190515,statistics,"mean,median,max,std,skew,kurtosis",,,Why this?,,,,,
+13,,,,,,,,,0Dx8,,190515,statistics extended,"mean,median,max,std,skew,kurtosis,min,var",,,This is very odd order?,,,,,
+14,,,,,,,,,0Dx10,,190515,acceleration_features,"statistics extended +number,range, max/min",,,This functions is strange!,,,,,
+15,,,dispersion,,pixel_position,dispersion,,,0D,,190513,calculate_dispersion,(\max(x) - \min(x))+ (\max(y) - \min(y)),,,,,,,,
+16,,num_fixation,,,count,,,,,fix,190516,non_distributional_features,,,,,,,,,
+17,,fixation_rate,,,rate,,,,,fix,190516,non_distributional_features,,,,,,,,,
+18,,fixation_time_stats,,,time,,,,,fix,190516,non_distributional_features,,,,,,,,,
+19,,total_fixation_time,,,time,,,,,fix,190516,non_distributional_features,,,,,,,,,
+20,,fixation_distance_stats,,,distance,,x,,,fix,190516,non_distributional_features,,,,,,,,,
+21,,total_fixation_distance,,,distance,,,,,fix,190516,non_distributional_features,,,,,,,,,
+22,,fixation_speed_stats,,,speed,,x,,,fix,190516,non_distributional_features,,,,,,,,,
+23,,total_fixation_speed,,,speed,,,,,fix,190516,non_distributional_features,,,,,,,,,
+24,,fixation_angular_vel_stats,,,velocity,,x,angular,,fix,190516,non_distributional_features,,,,,,,,,
+25,,total_fixation_angular_vel,,,velocity,,,angular,,fix,190516,non_distributional_features,,,,,,,,,
+26,,angular_acceleration_feats,,,absolute position deviation,,,angular,,,190516,non_distributional_features,,,,,,,,,
+27,,angular_deacceleration_feats,,,deacceleartion,,,angular,,,190516,non_distributional_features,,,,,,,,,
+28,,acceleration_feats,,,absolute position deviation,,,,,,190516,non_distributional_features,,,,,,,,,
+29,,deacceleration_feats,,,deacceleartion,,,,,,190516,non_distributional_features,,,,,,,,,
+30,1,fix_duration,duration,,data,duration,,,,fix,,,,,,,,,x,,
+31,2,count_fixation,,,count,,,,,fix,,,,,,,,,x,,
+32,3,fix_total_length,,,length,,,,,fix,,,,,,,,,x,,
+33,4,distance_from_last_fixation,,,distance,,,,,fix,,,,,,,,,x,,
+34,5,angle_with_previous_fix,,,angle,,,,,fix,,,,,,,,,x,,
+35,6,std_x,std,,position_pixel,std,,,,fix,,,,,,,,,x,,
+36,7,std_y,std,,position_pixel,std,,,,fix,,,,,,,,,x,,
+37,8,fix_skewness_x,skewness,,position_pixel,skew,,,,fix,,,,,,,,,x,,
+38,9,fix_skewness_y,skewness,,position_pixel,skew,,,,fix,,,,,,,,,x,,
+39,10,fix_kurtosis_x,kurtiosis,,position_pixel,kurtosis,,,,fix,,,,,,,,,x,,
+40,11,fix_kurtosis_y,kurtiosis,,position_pixel,kurtosis,,,,fix,,,,,,,,,x,,
+41,12,fix_dispersion,,,dispersion,,,,,fix,,,,,,name?,,,x,,
+42,12,dispersion,,,dispersion,,,,,fix,190513,calculate_dispersion,(\max(x) - \min(x))+ (\max(y) - \min(y)),,,,,,x,,
+43,13,fix_velocity,,,velocity,,,,,fix,,,,,,,,,x,,
+44,14,saccadic_duration,duration,,data,duration,,,,sac,,,,,Duration of saccades,,,,x,,
+45,15,dispersion,,,dispersion,,,,,sac,190513,calculate_dispersion,(\max(x) - \min(x))+ (\max(y) - \min(y)),,,,,,x,,
+46,16,angular_velocity_stats,,,velocity,,x,angular,,sac,,,,,,,,,x,,
+47,17,angular_acceleration_stats ,,,acceleration,,x,angular,,sac,,,,,,,,,x,,
+48,18,std_x,std,,position_pixel,std,,,,sac,,,,,,,,,x,,
+49,19,std_y,std,,position_pixel,std,,,,sac,,,,,,,,,x,,
+50,20,sacc_total_l,,,,,,,,sac,,,,,,,,,x,,
+51,21,angle_with_previous_sacc,,,angle,,,,,sac,,,,,,,,,x,,
+52,22,distance_from_previous_sacc,,,distance,,,,,sac,,,,,,,,,x,,
+53,23,saccadic_ratio,ratio,,,,,,,sac,,,,,,,,,x,,
+54,24,saccade_angle,,,angle,,,,,sac,,,,,,,,,x,,
+55,25,saccadic_amplitude,,,amplitude,,,,,sac,,,,,,,,,x,,
+56,26,velocity_x_stats,,,velocity,,x,,,sac,,,,,,,,,x,,
+57,27,velocity_y_stats,,,velocity,,x,,,sac,,,,,,,,,x,,
+58,28,acc_x_stats,,,acceleration,,x,,,sac,,,,,,,,,x,,
+59,29,acc_y_stats,,,acceleration,,x,,,sac,,,,,,,,,x,,
+60,30,distance_stats,,,distance,,e,,0Dx8,gaz,190515,general_gaze_points_features [1-8],calculate_distance_vector,,Statistics of Stepsize,,,,,,
+61,31,distance_total,,,distance,,,,0Dx1,gaz,190515,general_gaze_points_features [9],total_length(calculate_distance_vector),,traveled distance,,,,,,
+62,32,speed_stats,,,speed,,e,,0Dx8,gaz,190515,general_gaze_points_features [10-17],calculate_distance_vector * sampleRate,,Statistics of Velocities,,,,,,
+63,33,speed_total,,,speed,,,,0Dx1,gaz,190515,general_gaze_points_features [18],total_length(calculate_distance_vector * sampleRate),,!?,,,,,,
+64,34,angular_vel_stats,,,velocity,,,angular,0Dx8,gaz,190515,general_gaze_points_features [19-26],,,,,,,,,
+65,35,angular_vel_total,,,velocity,,,angular,0Dx1,gaz,190515,general_gaze_points_features [27],,,,,,D,,,
+66,,angular_acc_neg_diff,range,negativ,velocity,,,,,,190517,all_features,acc_neg_max - acc_neg_min,,,,,E,,,
+67,,angular_acc_neg_factor,,negativ,velocity,,,,,,190517,all_features,acc_neg_max / acc_neg_min,,,,,F,,,
+68,,angular_acc_pos_diff,range,positive,velocity,,,,,,190517,all_features,acc_pos_max – acc_pos_min,,,,,G,,,
+69,,angular_acc_pos_factor,,positive,velocity,,,,,,190517,all_features,acc_pos_max / acc_neg_min,,,,,,,,
+70,36,angular_acceleration_stats,,,acceleration,,x,angular,0Dx8,gaz,190515,general_gaze_points_features [28-35],,,,,,,,,
+71,37,angular_acceleration_total,,,acceleration,,,angular,,gaz,x,,,,,,,H,,,
+72,38,count_posative_angular_acceleration,,,acceleration,,,angular,,gaz,x,,,,,,,,,,
+73,39,diff_max_min_angular_acceleration,,,acceleration,,,angular,,gaz,x,,,,,,,,,,
+74,40,factor_max_min_angular_acceleration,,,acceleration,,,angular,,gaz,x,,,,,,,,,,
+75,41,angular_deacceleration_stats,,,acceleration,,x,angular,0Dx8,gaz,190515,general_gaze_points_features [36-43],,,,,,,,,
+76,42,angular_deacceleration_total,,,acceleration,,,angular,,gaz,x,,,,,,,,,,
+77,43,count_negative_angular_acceleration,,,acceleration,,,angular,,gaz,x,,,,,,,,,,
+78,44,diff_max_min_angular_deacceleration,,,deacceleartion,,,angular,,gaz,x,,,,,,,,,,
+79,45,factor_max_min_angular_deacceleration,,,deacceleartion,,,angular,,gaz,x,,,,,,,,,,
+80,46,acceleration_stats,,,acceleration,,x,,0Dx6,gaz,190516,acceleration_features [1-6],,,,,,A,,,
+81,46,acceleration_stats,,,acceleration,,x,,0Dx10,gaz,190515,general_gaze_points_features [44-53],,,,,,A,,,
+82,47,acceleration_total,,,acceleration,,,,0Dx1,gaz,190516,acceleration_features [7],,,Sum of acceleration vectors,,,A,,,
+83,48,count_posative_acceleration,,,acceleration,,,,0Dx1,gaz,190516,acceleration_features [8],,,Number of accelerations,this is maybe broken. Returns only length of list,,A,,,
+84,49,diff_max_min_acceleration,,,acceleration,,,,0Dx1,gaz,190516,acceleration_features [9],,,Range/Amplitude of accelerations,,,A,,,
+85,50,factor_max_min_acceleration,,,acceleration,,,,0Dx1,gaz,190516,acceleration_features [10],,,Factor of accelerations,,,A,,,
+86,51,deacceleration_stats,,,deacceleartion,,x,,0Dx10,gaz,190515,general_gaze_points_features [54-63],,,,,,B,,,
+87,51,deacceleration_stats,,,deacceleartion,,x,,0Dx10,gaz,190515,acceleration_features [1-6],,,,,,B,,,
+88,52,deacceleration_total,,,deacceleartion,,,,0Dx1,gaz,190515,acceleration_features [7],,,,,,B,,,
+89,53,count_negative_acceleration,,,acceleration,,,,0Dx1,gaz,190515,acceleration_features [8],,,,,,B,,,
+90,54,diff_max_min_deacceleration,,,deacceleartion,,,,0Dx1,gaz,190515,acceleration_features [9],,,,,,B,,,
+91,55,factor_max_min_deacceleration,,,deacceleartion,,,,0Dx1,gaz,190515,acceleration_features [10],,,,,,B,,,
+92,56,dispersion,,,dispersion,,,,0Dx1,gaz,190515,general_gaze_points_features [64],,,,,,,,,
+93,57,num_change_direction,,,direction,,,,0Dx2,gaz,190515,general_gaze_points_features [65],,,,,,C,,,
+94,58,num_change_direction_threshold,,,direction,,,,,gaz,x,,,,,,,,,,
+95,59,num_saccadic,,,,,,,,sac,x,,,,,,,,,,
+96,60,saccade_rate,,,,,,,,sac,previous,,,,,,,,,,
+97,61,saccadic_time_stats,,,duration,,x,,,sac,previous,,,,,,,,,,
+98,62,total_saccadic_time,,,duration,,,,,sac,previous,,,,,,,,,,
+99,63,saccadic_distance_stats,,,distance,,x,,,sac,previous,,,,,,,,,,
+100,64,total_saccadic_distance,,,distance,,,,,sac,previous,,,,,,,,,,
+101,65,saccadic_speed_stats,,,velocity,,x,,,sac,previous,,,,,,,,,,
+102,66,total_saccadic_speed,,,velocity,,,,,sac,previous,,,,,,,,,,
+103,67,saccadic_angular_vel_stats,,,velocity,,x,angular,,sac,previous,,,,,,,,,,
+104,68,total_saccadic_angular_vel,,,velocity,,,angular,,sac,previous,,,,,,,,,,
+105,69,sacc_ang_acceleration_stats,,,velocity,,x,angular,,sac,previous,,,,,,,,,,
+106,70,sacc_ang_acceleration_total,,,velocity,,,angular,,sac,previous,,,,,,,,,,
+107,71,sacc_count_posative_ang_acceleration,,,acceleration,,,angular,,sac,previous,,,,,,,,,,
+108,72,sacc_diff_max_min_ang_acceleration,,,acceleration,,,angular,,sac,previous,,,,,,,,,,
+109,73,sacc_factor_max_min_ang_acceleration,,,acceleration,,,angular,,sac,previous,,,,,,,,,,
+110,74,sacc_ang_deacceleration_stats,,,deacceleartion,,x,angular,,sac,previous,,,,,,,,,,
+111,75,sacc_ang_deacceleration_total,,,deacceleartion,,,angular,,sac,previous,,,,,,,,,,
+112,76,sacc_count_negative_ang_acceleration,,,acceleration,,,angular,,sac,previous,,,,,,,,,,
+113,77,sacc_diff_max_min_ang_deacceleration,,,deacceleartion,,,angular,,sac,previous,,,,,,,,,,
+114,78,sacc_factor_max_min_ang_deacceleration,,,deacceleartion,,,angular,,sac,previous,,,,,,,,,,
+115,79,sacc_acceleration_stats,,,acceleration,,x,,,sac,previous,,,,,,,,,,
+116,80,sacc_acceleration_total,,,acceleration,,,,,sac,previous,,,,,,,,,,
+117,81,sacc_count_posative_acceleration,,,acceleration,,,,,sac,previous,,,,,,,,,,
+118,82,sacc_diff_max_min_acceleration,,,acceleration,,,,,sac,previous,,,,,,,,,,
+119,83,sacc_factor_max_min_acceleration,,,acceleration,,,,,sac,previous,,,,,,,,,,
+120,84,sacc_deacceleration_stats,,,deacceleartion,,x,,,sac,previous,,,,,,,,,,
+121,85,sacc_deacceleration_total,,,deacceleartion,,,,,sac,previous,,,,,,,,,,
+122,86,sacc_count_negative_acceleration,,,acceleration,,,,,sac,previous,,,,,,,,,,
+123,87,sacc_diff_max_min_deacceleration,,,deacceleartion,,,,,sac,previous,,,,,,,,,,
+124,88,sacc_factor_max_min_deacceleration,,,deacceleartion,,,,,sac,previous,,,,,,,,,,
+125,89,sac_factor_max_min_deacceleration,,,deacceleartion,,,,,sac,previous,,,,,,,,,,
+126,90,fixation_time_stats,,,duration,,x,,,fix,previous,,,,,,,,,,
+127,91,total_fixation_time,,,,,,,,fix,previous,,,,,,,,,,
+128,92,fixation_distance_stats,,,distance,,x,,,fix,previous,,,,,,,,,,
+129,93,total_fixation_distance,,,distance,,,,,fix,previous,,,,,,,,,,
+130,94,fixation_speed_stats,,,velocity,,x,,,fix,previous,,,,,,,,,,
+131,95,total_fixation_speed,,,velocity,,,,,fix,previous,,,,,,,,,,
+132,96,fixation_angular_vel_stats,,,velocity,,x,angular,,fix,previous,,,,,,,,,,
+133,97,total_fixation_angular_vel,,,velocity,,,angular,,fix,previous,,,,,,,,,,
+134,98,fix_ang_acceleration_stats,,,acceleration,,x,angular,,fix,previous,,,,,,,,,,
+135,99,fix_ang_acceleration_total,,,acceleration,,,angular,,fix,previous,,,,,,,,,,
+136,100,fix_count_posative_ang_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+137,101,fix_diff_max_min_ang_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+138,102,fix_factor_max_min_ang_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+139,103,fix_ang_deacceleration_stats,,,,,x,,,fix,previous,,,,,,,,,,
+140,104,fix_ang_deacceleration_total,,,,,,,,fix,previous,,,,,,,,,,
+141,105,fix_count_negative_ang_acceleration,,,acceleration,,,,,fix,previous,,,,,negative acceleration!?,,,,,
+142,106,fix_diff_max_min_ang_deacceleration,,,deacceleartion,,,,,fix,previous,,,,,,,,,,
+143,107,fix_factor_max_min_ang_deacceleration,,,deacceleartion,,,,,fix,previous,,,,,,,,,,
+144,108,fix_acceleration_stats,,,acceleration,,x,,,fix,previous,,,,,,,,,,
+145,109,fix_acceleration_total,,,acceleration,,,,,fix,previous,,,,,,,,,,
+146,110,fix_count_posative_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+147,111,fix_diff_max_min_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+148,112,fix_factor_max_min_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+149,113,fix_deacceleration_stats,,,deacceleartion,,x,,,fix,previous,,,,,,,,,,
+150,114,fix_deacceleration_total,,,deacceleartion,,,,,fix,previous,,,,,,,,,,
+151,115,fix_count_negative_acceleration,,,acceleration,,,,,fix,previous,,,,,,,,,,
+152,116,fix_diff_max_min_deacceleration,,,deacceleartion,,,,,fix,previous,,,,,,,,,,
+153,117,fix_factor_max_min_deacceleration,,,deacceleartion,,,,,fix,previous,,,,,,,,,,
+154,118,uni_gram_features,,,,,,,,idea,,,,,,paper: Eye movements during everyday behavior predict personality traits,,I,,,
+155,118,bi_gram_features,,,,,,,,idea,,,,,,paper: Eye movements during everyday behavior predict personality traits,,J,,,
+156,118,tri_gram_features,,,,,,,,idea,,,,,,paper: Eye movements during everyday behavior predict personality traits,,,,,
+157,118,four_gram_features,,,,,,,,idea,,,,,,paper: Eye movements during everyday behavior predict personality traits,,,,,
+158,119,Histogram features,,,,,,,,idea,,,,,,"idea came when we had meeting me and you and Christoph in the beginning.
+Then later I found some papers mentioned it as example in the table 3 of the survey paper 
+1-(Eye movement analysis for human authentication: a critical survey
+--Chiara Galdi , Michele Nappi b , Daniel Riccio c , Harry Wechsler) 
+2-Also mentioned in (Current research in eye movement biometrics:
+An analysis based on BioEye 2015 competition)",,K,,,
+159,120,Microfixation features,,,,,,,,idea,,,,,,"me and you discussed to added new features by counting the number of
+micro fixations in gaze points. These microfixations are calculated by
+employing a distance threshold to classify a group of close points, and
+subsequently the statistical features for the micro fixation count is estimated.
+Also we extracted it without the distance threshold by counting the same gaze points.",,L,,,
+160,120,Microfixation 5 features,,,,,,,,idea,,,,,,,,M,,,
+161,120,Microfixation 10 features,,,,,,,,idea,,,,,,,,N,,,
+162,121,acceleration features,,,acceleration,,,,,idea,,,,,,"1-(Biometric Recognition via Eye Movements: Saccadic Vigor and Acceleration Cues)
+2-(Current research in eye movement biometrics:
+An analysis based on BioEye 2015 competition)
+3-( Eye movement analysis for human authentication: a critical survey
+--Chiara Galdi , Michele Nappi b , Daniel Riccio c , Harry Wechsler )
+4-In this paper (User Identification Based on Eye Gaze Data)
+they mentioned the acceleration in the related work. 
+5-Finally in (Study of an Extensive Set of Eye Movement Features:
+Extraction Methods and Statistical Analysis)",,,,,
+163,122,de-acceleration,,,deacceleartion,,,,,idea,,,,,,"it was your idea to add it with our features
+It was the most important feature for the Random Forest",,,,,
+164,123,histogram,,,,,,,,,,,,,,,,,,,
+165,124,Angular acceleration,,,acceleration,,,angular,,idea,,,,,,"1-(competition paper 2015) 
+2-(On Biometrics with Eye Movements, for Youming Zhang and Martti Juhola,
+Member, IEEE)",,,,,
+166,,,rate,,,,,,,fix,,,,,,Fix^Num / Rec^dur => number of fixations per second,,,,F01,Fix_Rate
+167,,,,,duration,,x,,,fix,,,,,,Stats of durations of fixation,,,,F02,FixDur^DscrStat
+168,,,,,position,,x,HV,,fix,,,,,,Stats of position centroids of fixation => see Formular Rigas2018,,,,F03,FixPosCentroid^DscrStat-HV
+169,,,displacement,,drift,,x,HVR,,fix,,,,,,Stats of drift displacements of fixations => see Formular Rigas2018,,,,F04,FixDriftDisp^DscrStat-HVR
+170,,,distance,,drift,,x,HVR,,fix,,,,,,Stats of drift distances of fixation => see Formular Rigas2018,,,,F05,FixDriftDist^DscrStat-HVR
+171,,,speed,,drift,,x,HVR,,fix,,,,,,stat( FixDriftDisp(i)/FixDur(i) ) => Stats of drift average speeds of fixation,,,,F06,FixDriftAvgSpeed^DscrStat-HVR
+172,,,fitLn slope,,drift,,x,HV,,fix,,,,,,stat( linReg( FixPos(i) ) ) => Stats of drift linear-regression-fit slope of fixation,,,,F07,FixDriftFitLn^DscrStat-HV_Slope
+173,,,fitLn R²,,drift,,x,HV,,fix,,,,,,Stats of drift linear-regression-firt R² of fixation,,,,F08,FixDriftFitLn^DscrStat-HV_R²
+174,,,fitQd R²,,drift,,x,HV,,fix,,,,,,Stats of drift quadratic-regression-fit R² of fixation,,,,F09,FixDriftFitQd^DscrStat-HV_R²
+175,,,L0Q0,,drift,,,HV,,fix,,,,,,The L0Q0 parameter percentage => see formular Rigas2018,,,,F10,FixDriftPrL0Q0^HV
+176,,,L0Q1,,drift,,,HV,,fix,,,,,,The L0Q1 parameter percentage => see formular Rigas2018,,,,F11,FixDriftPrL0Q1^HV
+177,,,L1Q0,,drift,,,HV,,fix,,,,,,The L1Q0 parameter percentage => see formular Rigas2018,,,,F12,FixDriftPrL1Q0^HV
+178,,,L1Q1,,drift,,,HV,,fix,,,,,,The L1Q1 parameter percentage => see formular Rigas2018,,,,F13,FixDriftPrL1Q1^HV
+179,,,mean,,velocity,,x,HVR,,fix,,,,,,stat( mean( | FixVel(i) | ) ) =>Stats of velocity profile-sample mean of fixatons,,,,F14,FixVelProfMn^DscrStat-HVR
+180,,,median,,velocity,,x,HVR,,fix,,,,,,stat( median( | FixVel(i) | ) ) => Stats of velocity profile-sample median of fixations,,,,F15,FixVelProfMd^DscrStat-HVR
+181,,,standard deviation,,velocity,,x,HVR,,fix,,,,,,"stat( std( | FixVel(i) | ) )
+=> Stats of velocity profile-sample standard deviation of fixations",,,,F16,FixVelProfSd^DscrStat-HVR
+182,,,skewness,,velocity,,x,HVR,,fix,,,,,,Stats of velocity profile-sample skeness of fixations => see formular Rigas2018,,,,F17,FixVelProfSk^DscrStat-HVR
+183,,,kurtosis,,velocity,,x,HVR,,fix,,,,,,Stats of velocity profile-sample kurtosis of fixations => see formular Rigas2018,,,,F18,FixVelProfKu^DscrStat-HVR
+184,,,,,,,x,R,,fix,,,,,,"Stats of percentages of the velocity samples of fixations that are above 90-th percentile
+=> see formular Rigas2018",,,,F19,FixPrAbP90VelThr^DscrStat-R
+185,,,,,,,x,R,,fix,,,,,,"Stats of percentages of the velocity samples of fixations that cross 90-th percentile
+=> see formular Rigas2018",,,,F20,FixPrAbP90VelThr^DscrStat-R
+186,,,mean,,acceleraton,,x,HVR,,fix,,,,,,stat( mean( | FixAcc(i) | ) ) =>Stats of acceleration profile-sample mean of fixatons,,,,F21,FixAccProfMn^DscrStat-HVR
+187,,,median,,acceleraton,,x,HVR,,fix,,,,,,stat( median( | FixAcc(i) | ) ) => Stats of acceleration profile-sample median of fixations,,,,F22,FixAccProfMd^DscrStat-HVR
+188,,,standard deviation,,acceleraton,,x,HVR,,fix,,,,,,"stat( std( | FixAcc(i) | ) )
+=> Stats of acceleration profile-sample standard deviation of fixations",,,,F23,FixAccProfSd^DscrStat-HVR
+189,,,skewness,,acceleraton,,x,HVR,,fix,,,,,,Stats of acceleration profile-sample skeness of fixations => see formular Rigas2018,,,,F24,FixAccProfSk^DscrStat-HVR
+190,,,kurtosis,,acceleraton,,x,HVR,,fix,,,,,,Stats of acceleration profile-sample kurtosis of fixations => see formular Rigas2018,,,,F25,FixAccProfKu^DscrStat-HVR
+191,,,rate,,,,,,,sac,,,,,,Sac^Num / Rec^dur => number of saccades per second,,,,S01,Sac_Rate
+192,,,,,duration,,x,,,sac,,,,,,Stats of duration of saccades,,,,S02,SacDur^DscrStat
+193,,,,,ampltude,,x,HVR,,sac,,,,,,Stats of amplitudes of saccades (End-Start),,,,S03,SacAmp^DscrStat-HVR
+194,,,,,travelled distance,,x,R,,sac,,,,,,Stats of travelled distances of saccades => see formular Rigas2018,,,,S04,SacTravDist^DscrStat-R
+195,,,,,,,x,R,,sac,,,,,,Stats of efficiency metric of saccades => see formular Rigas2018,,,,S05,SacEfficiency^DscrStat-R
+196,,,,,,,x,R,,sac,,,,,,Stats of tail efficiency metric of saccades => see formular Rigas2018,,,,S06,SacTailEfficiency^DscrStat-R
+197,,,,,,,x,HV2D,,sac,,,,,,Stats of percentage tail inconsistency metric of saccades => see formular Rigas2018,,,,S07,SacTailPrInconsist^DscrStat-HV2D
+198,,,,,Initial direction,,x,HV2D,,sac,,,,,,Stats of initial direction of saccades => see formular Rigas2018,,,,S08,SacInitDir^DscrStat-HV2D
+199,,,,,average deviation,,x,HV2D,,sac,,,,,,Stats of initial average deviation of saccades => see formular Rigas2018,,,,S09,SacInitAvgDev^DscrStat-HV2D
+200,,,,,raw deviation,,x,HV2D,,sac,,,,,,Stats of maximum raw deviation of saccades => see formular Rigas2018,,,,S10,SacMaxRawDev^DscrStat-HV2D
+201,,,,,,,x,HV2D,,sac,,,,,,,,,,S11,SacPoiMaxRawDev^DscrStat-HV2D
+202,,,area,,curvature metric,,x,HV2D,,sac,,,,,,Stats of area curvature metric of saccades => see formular Rigas2018,,,,S12,SacAreaCurv^DscrStat-HV2D
+203,,,fit quadratic,,curvature metric,,x,HV2D,,sac,,,,,,Stats of quadratic-fit curvature metric of saccades => see formular Riags2018,,,,S13,SacQuadCurv^DscrStat-HV2D
+204,,,fit cubic,,,,x,HV2D,,sac,,,,,,Stats of cubic-fit-extrem-1 of saccades => see formular Riags2018,,,,S14,SacCubCurvM1^DscrStat-HV2D
+205,,,fit cubic,,,,x,HV2D,,sac,,,,,,,,,,S15,SacPoiCurbCurvM1^DscrStat-HV2D
+206,,,fit cubic,,,,x,HV2D,,sac,,,,,,Stats of cubic-fit-extrem-2 of saccades => see formular Riags2018,,,,S16,SacCubCurvM2^DscrStat-HV2D
+207,,,fit cubic,,,,x,HV2D,,sac,,,,,,,,,,S17,SacPoiCubCurvM2^DscrStat-HV2D
+208,,,fit cubic,,curvature maximum,,x,HV2D,,sac,,,,,,Stats of cubic-fit-curvature-maximum of saccades => see formular Riags2018,,,,S18,SacCubCurvMax^DscrStat-HV2D
+209,,,fit cubic,,,,x,HV2D,,sac,,,,,,,,,,S19,SacPoiCubCurveMax^DscrStat-HV2D
+210,,,number,,velocity minima,,x,R,,sac,,,,,,Stats of number of local minima in velocity profile of saccades,,,,S20,SacNumVelLocMin^DscrStat-R
+211,,,maximum,,velocity,,x,HVR,,sac,,,,,,"stat( max( |SacVel(i) | ) ) >= Stats of peak velocities of saccades
+=> see formular Rigas2018",,,,S21,SacPkVel^DscrStat-HVR
+212,,,mean,,velocity,,x,HVR,,sac,,,,,,stat( mean( | SacVel(i) | ) ) =>Stats of velocity profile-sample mean of saccades,,,,S22,SacVelProfMn^DscrStat-HVR
+213,,,median,,velocity,,x,HVR,,sac,,,,,,stat( median( | SacVel(i) | ) ) => Stats of velocity profile-sample median of saccades,,,,S23,SacVelProfMd^DscrStat-HVR
+214,,,standard deviation,,velocity,,x,HVR,,sac,,,,,,stat( std( | SacVel(i) | ) ) => Stats of velocity profile-sample standard deviation of saccades,,,,S24,SacVelProfSd^DscrStat-HVR
+215,,,skewness,,velocity,,x,HVR,,sac,,,,,,Stats of velocity profile-sample skeness of saccades => see formular Rigas2018,,,,S25,SacVelProfSk^DscrStat-HVR
+216,,,kurtosis,,velocity,,x,HVR,,sac,,,,,,Stats of velocity profile-sample kurtosis of saccades => see formular Rigas2018,,,,S26,SacVelProfKu^DscrStat-HVR
+217,,,maximum,,acceleraton,,x,HVR,,sac,,,,,,stat( max( | SacAcc(i) | ) ) => Stats of peak accelerations of saccades,,,,S27,SacPkAcc^DscrStat-HVR
+218,,,maximum,,deceleration,,x,HVR,,sac,,,,,,stat( max( | SacDec(i) | ) ) => Stats of peak decelerations of saccades,,,,S28,SacPkDec^DscrStat-HVR
+219,,,mean,,acceleraton,,x,HVR,,sac,,,,,,stat( mean( | SacAcc(i) | ) ) =>Stats of acceleration profile-sample mean of saccades,,,,S29,SacAccProfMn^DscrStat-HVR
+220,,,median,,acceleraton,,x,HVR,,sac,,,,,,stat( median( | SacAcc(i) | ) ) => Stats of acceleration profile-sample median of saccades,,,,S30,SacAccProfMd^DscrStat-HVR
+221,,,standard deviation,,acceleraton,,x,HVR,,sac,,,,,,"stat( std( | SacAcc(i) | ) ) => Stats of acceleration profile-sample
+Standard deviation of saccades",,,,S31,SacAccProfSd^DscrStat-HVR
+222,,,skewness,,acceleraton,,x,HVR,,sac,,,,,,Stats of acceleration profile-sample skeness of saccades => see formular Rigas2018,,,,S32,SacAccProfSk^DscrStat-HVR
+223,,,kurtosis,,acceleraton,,x,HVR,,sac,,,,,,Stats of acceleration profile-sample kurtosis of saccades => see formular Rigas2018,,,,S33,SacAccProfKu^DscrStat-HVR
+224,,,ratio,,amplitude-duration,,x,HVR,,sac,,,,,,stat(SacAmp(i)/SacDur(i)) => Stats of amplitude-duration ratio of saccades,,,,S34,SacAmpDur_Ratio^DscrStat-HVR
+225,,,ratio,,peak velocity-amplitude,,x,HVR,,sac,,,,,,stat(SacPkVel(i)/SacAmp(i)) => Stats of peak velocity-amplitude ratio of saccades,,,,S35,SacPkVelAmp_Ratio^DscrStat-HVR
+226,,,ratio,,peak velocity-duration,,x,HVR,,sac,,,,,,stat(SacPkVel(i)/SacDur(i)) => Stats of peak velocity-duration ratio of saccades,,,,S36,SacPkVelDur_Ratio^DscrStat-HVR
+227,,,ratio,,velocity(peak-mean),,x,HVR,,sac,,,,,,stat(SacPkVel(i)/SacAmpDur(i)) => Stats of peak velocity-mean velocity ratio of saccades,,,,S37,SacPkVelMnVeld_Ratio^DscrStat-HVR
+228,,,ratio,,peak velocity-local noise,,x,R,,sac,,,,,,stat(SacPkVel(i)/SacLocNoise(i)) => Stats of peak velocity-local noise ratio of saccades,,,,S38,SacPkVelLocNoiseRatio^DscrStat-R
+229,,,ratio,,duration(acceleration-deceleration),,x,,,sac,,,,,,Stats on acceleration-deceleration duration ratio of saccades => see formular Rigas2018,,,,S39,SacAccDecDur_Ratio^DscrStat
+230,,,ratio,,peak(acceleration-deceleration),,x,HVR,,sac,,,,,,"stat(SacPkAcc(i)/SacPkDec(i)) => Stats of peak acceleartion-peak
+Deceleration ratio of saccades",,,,S40,SacPkAccPkDec_Ratio^DscrStat-HVR
+231,,,fitLn intercept,,amplitude-duration,,,R,,sac,,,,,,"intercept from linear-regression-fit performed collectively on all saccades
+To model the overall amplitude-duration relationship",,,,S41,SacAmpDurFitLn_Intercept^R
+232,,,fitLn slope,,amplitude-duration,,,R,,sac,,,,,,"slope from linear-regression-fit performed collectively on all saccades
+To model the overall amplitude-duration relationship",,,,S42,SacAmpDurFitLn_Slope^R
+233,,,fitLn R²,,amplitude-duration,,,R,,sac,,,,,,"R² from linear-regression-fit performed collectively on all saccades
+To model the overall amplitude-duration relationship",,,,S43,SacAmpDurFitLn_R²^R
+234,,,fitLn intercept,,log(peak velocity)-log(amplitude),,,R,,sac,,,,,,"intercept from linear-regression-fit performed collectively on all saccades
+To model the overall logartihm peak velocity-logarithm amplitude relationship",,,,S44,SacPkVelAmpFinLn_Intercept^R
+235,,,fitLn slope,,log(peak velocity)-log(amplitude),,,R,,sac,,,,,,"slope from linear-regression-fit performed collectively on all saccades
+to model the overall logartihm peak velocity-logarithm amplitude relationship",,,,S45,SacPkVelAmpFinLn_Slope^R
+236,,,fitLn R²,,log(peak velocity)-log(amplitude),,,R,,sac,,,,,,"R² from linear-regression-fit performed collectively on all saccades
+To model the overall logartihm peak velocity-logarithm amplitude relationship",,,,S46,SacPkVelAmpFinLn_R²^R
+237,,,rate,,small right saccades,,,,,sac,,,,,,"num(SacAmp<=8°, to the right)/dur => The number of small right saccades per second",,,,S47,SacSmRight_Rate
+238,,,rate,,small left saccades,,,,,sac,,,,,,"num(SacAmp<=8°, to the left)/dur => The number of small leftward saccades per second",,,,S48,SacSmLeft_Rate
+239,,,rate,,large right saccades,,,,,sac,,,,,,"num(SacAmp>8°, to the right)/dur => The number of large right saccades per second",,,,S49,SacLgRight_Rate
+240,,,rate,,large left saccades,,,,,sac,,,,,,"num(SacAmp>8°, to the left)/dur => The number of large leftward saccades per second",,,,S50,SacLgLeft_Rate
+241,,,ratio,,small saccades(left-right),,,,,sac,,,,,,"The ratio of the number of small leftward saccades to the number of small and
+Rightward saccades",,,,S51,SacSmLeftSmRight_Ratio
+242,,,ratio,,all small saccades-large left saccades,,,,,sac,,,,,,"The ratio of the number of all small saccades to the number of large and
+leftward saccades",,,,S52,SacSmAllLgLeft_Ratio
+243,,,duration,,oscillations,,x,,,pso,,,,,,Stats of durations of post-saccadic oscillations,,,,P01,PsoDur^DistrStat
+244,,,interval,,oscillations,,x,,,pso,,,,,,Stats of inter-post-saccadic oscillation intervals => see formular Rigas2018,,,,P02,PsoInterv^DistrStat
+245,,,percentage,,oscillations,,,,,pso,,,,,,Pso^Num/Sac^Num => percentage of sacades with a post-saccadic oscillations,,,,P03,Pso_Pr
+246,,,percentage,,slow oscillations,,,,,pso,,,,,,Percentage of slow post-saccadic-oscillations with velocity < 45°/s ,,,,P04,PsoSlow_Pr
+247,,,percentage,,moderate oscillations,,,,,pso,,,,,,Percentage of moderate post-saccadic-oscillations with velocity > 45°/s and < 55°/s,,,,P05,PsoModerate_Pr
+248,,,percentage,,fast oscillations,,,,,pso,,,,,,Percentage of fast post-saccadic-oscillations with velocity > 55°/s ,,,,P06,PsoFast_Pr
+249,,,maximum,,absolute position deviation,,x,HVR,,pso,,,,,,"Stats of maximum absolute deviation of position profiles of post-saccadic oscillations
+=> see formular Rigas2018",,,,P07,PsoMaxAbsDev^DistrStat-HVR
+250,,,number,,valleys,,x,HVR,,pso,,,,,,"Stats of number of valleys in position profile of post-saccadic oscillations
+=> see formular Rigas2018",,,,P08,PsoNumPosVlls^DistrStat-HVR
+251,,,number,,peaks,,x,HVR,,pso,,,,,,"Stats of number of peaks in position profile of post-saccadic oscillations
+=> see formular Rigas2018",,,,P09,PsoNumPosPks^DistrStat-HVR
+252,,,,,peak velocity,,x,HVR,,pso,,,,,,max(PsoVel(i)) => Stats of peak velocities of post-saccadic oscillations,,,,P10,PsoPkVel^DistrStat-HVR
+253,,,mean,,velocity,,x,HVR,,pso,,,,,,"stat( mean( | PsoVel(i) | ) ) =>Stats of velocity profile-sample mean
+Of post-saccadic-oscillations",,,,P11,PsoVelProfMn^DistrStat-HVR
+254,,,median,,velocity,,x,HVR,,pso,,,,,,"stat( median( | PsoVel(i) | ) ) => Stats of velocity profile-sample median
+of post-saccadic-oscillations",,,,P12,PsoVelProfMd^DistrStat-HVR
+255,,,standard deviation,,velocity,,x,HVR,,pso,,,,,,"stat( std( | PsoVel(i) | ) ) => Stats of velocity profile-sample standard deviation
+Of post-saccadic-oscillations",,,,P13,PsoVelProfSd^DistrStat-HVR
+256,,,skewness,,velocity,,x,HVR,,pso,,,,,,"Stats of velocity profile-sample skeness of post-saccadic-oscillations
+=> see formular Rigas2018",,,,P14,PsoVelProfSk^DistrStat-HVR
+257,,,kurtosis,,velocity,,x,HVR,,pso,,,,,,"Stats of velocity profile-sample kurtosis of post-saccadic-oscillations
+=> see formular Rigas2018",,,,P15,PsoVelProfKu^DistrStat-HVR
+258,,,mean,,acceleraton,,x,HVR,,pso,,,,,,"stat( mean( | PsoAcc(i) | ) ) =>Stats of acceleration profile-sample mean
+Of post-saccadic-oscillations",,,,P16,PsoAccProfMn^DistrStat-HVR
+259,,,median,,acceleraton,,x,HVR,,pso,,,,,,"stat( median( | PsoAcc(i) | ) ) => Stats of acceleration profile-sample median
+Of post-saccadic-oscillations",,,,P17,PsoAccProfMd^DistrStat-HVR
+260,,,standard deviation,,acceleraton,,x,HVR,,pso,,,,,,"stat( std( | PsoAcc(i) | ) ) => Stats of acceleration profile-sample standard deviation
+Of post-saccadic-oscillations",,,,P18,PsoAccProfSd^DistrStat-HVR
+261,,,skewness,,acceleraton,,x,HVR,,pso,,,,,,"Stats of acceleration profile-sample skeness of post-saccadic-oscillations
+=> see formular Rigas2018",,,,P19,PsoAccProfSk^DistrStat-HVR
+262,,,kurtosis,,acceleraton,,x,HVR,,pso,,,,,,"Stats of acceleration profile-sample kurtosis of post-saccadic-oscillations
+=> see formular Rigas2018",,,,P20,PsoAccProfKu^DistrStat-HVR
+263,,,ratio,,duration,,x,,,pso,,,,,,SacDur(i)/PsoDur(i) =>Stats of saccade-post-saccadic oscillaton duration ratios,,,,P21,PsoSacDurPsoDur_Ratio^DistrStat
+264,,,ratio,,amplitude-duration,,x,,,pso,,,,,,"SacAmp(i)/PsoDur(i) =>Stats of saccade-amplitude-post-saccadic
+Oscillaton duration ratios",,,,P22,PsoSacAmpPsoDur_Ratio^DistrStat
+265,,,ratio,,,,x,,,pso,,,,,,"SacAmp(i)/PsoMaxAbsDev(i) =>Stats of saccade-amplitude-post-saccadic
+Oscillaton maximum absolute deviations ratios",,,,P23,PsoSacAmpPsoMax_Ratio^DistrStat
+266,,,ratio,,peak velocity,,x,,,pso,,,,,,"SacPkVel(i)/PsoPkVel(i) =>Stats of saccade-post-saccadic
+Oscillaton peak velocity ratios",,,,P24,PsoSacPkVelPsoPkVel_Ratio^DistrStat
+266,,path_len,,,pixel_difference,sum,,,,,,total_distance,,,,,,,,,
+267,,angle_prev_win,,,,,,,,,,,,,,,,,,,
+268,,dist_prev_win,,,pixel_position,distance_cog,,,,,,distance_from_previous,,,,,,,,,
+269,,win_angle,,,pixel_difference,angle_first_last,,,,,,angle_between_first_and_last_points,,,,,,,,,
+270,,avg_vel,,,,,,,,,,,,,,,,,,,
+271,,win_ratio,,,,second_level,,,,,,,np.max(angular_vel) / duration,,,,,,,,

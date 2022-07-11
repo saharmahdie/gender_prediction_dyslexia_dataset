@@ -1,0 +1,12 @@
+User Identification accuracy:
+=============================
+
+The results of "Robustness of Eye Movement Biometrics against Varying Stimuli"
+
+Classifier-features  |   RAN-data   |    TEX-data
+===================  |   ========   |    ========
+                     |              |      
+RDF-all              |    90.9      |      85.6
+RBFN-all             |    94.1      |      90.8
+
+

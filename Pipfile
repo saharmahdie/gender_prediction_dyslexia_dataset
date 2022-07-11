@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+awscli = "*"
+click = "*"
+matplotlib = "*"
+jupyter = "*"
+notebook = "*"
+"flake8" = "*" # not in requirements
+Sphinx = "*"
+# does the order here is important?
+numpy = "*"
+numpy-indexed = "*"
+scipy = "*"
+pandas = "*"
+python-dotenv = "*"
+seaborn = "*"
+joblib = "*"
+sklearn = "*"
+bokeh = "*"
+
+[dev-packages]
+pylint = "*"
+rope = "*"
+
+[requires]
+python_version = "3.7"

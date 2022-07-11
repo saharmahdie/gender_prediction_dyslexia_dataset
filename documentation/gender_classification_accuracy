@@ -1,0 +1,71 @@
+
+Gender Classificatione accuracy:
+=============================
+The results of "Gender Classification of Prepubescent Children via Eye Movements with Reading Stimuli"
+
+users=groups                          LogReg      |   RBFN     |    Naive-Bayes  |     SVM        |    RF
+========================             ========     |  =======   |  ============== |    ======      |  ====== 
+                                                  |            |                 |                |        
+Mixed (18 M, 18 F (36 users))         50.1 ± 0.5% |53.9 ± 0.5% |   54.6 ± 0.5%   |  52.5 ± 0.5%   | 50.8 ± 0.5 %
+Non-Dyslexic (19 M, 19 F (38 users))  63.8 ± 0.5% |52.9 ± 0.3% |   54.9 ± 0.4%   |  50.7 ± 0.2%   | 56.6 ± 0.5 %
+Dyslexic (19 M, 19 F (38 users))      60.7 ± 0.6% |54.6 ± 0.5% |   58.3 ± 0.5%   |  58.6 ± 0.5%   | 52.0 ± 0.6 %
+
+To run the above expermints use make file as mentioned in README.md file of our project under section of (Experiments documentation for Gender prediction).
+
+
+Or simply run the below scripts:
+================================
+1. Gender prediction in Mixed group of users:
+
+paper_gender_prediction_mixed_group_accuracy.sh
+Then run:
+python3 paper_gender_prediction_Mixed_group_avarage_accuracy.py
+
+2. Gender prediction in Non_dyslexic group of users:
+
+sh paper_gender_prediction_Non_dyslexic_group_accuracy.sh
+Then run: 
+python3 paper_gender_prediction_Non_dyslexic_group_avarage_accuracy.py
+
+3. Gender prediction in Dyslexic group of users:
+
+sh paper_gender_prediction_Dyslexic_group_accuracy.sh
+Then run:
+python3 paper_gender_prediction_Dyslexic_group_avarage_accuracy.py
+
+
+
+
+General Gender classification experiments on dyslexia data set:
+===============================================================
+
+To run different  experiments with different parameters do the below steps:
+
+1. Choose the name for the folder that will save the JSON files of the prediction accuracy in the results folder. To do that open (evaluation_gender.py) script and write the folder name in (filename) code line (line 311) after the result folder.
+
+2. Run the script: 
+eval_gender.sh 
+
+After setting the parameters that you need in this script, e.g. number of features, the number of runs, classifiers, ...
+
+3. To print and visualize your final accuracies table (mean accuracy over all the runs), use the script (run_overview_feature.py or run_overview_ratios.py) in (stand_alone) folder. After providing the specific path of your prediction results (that you chose in point 1)
+ 
+
+
+1. Mixed Group evaluation example:
+==================================
+Run the gender prediction in 36 mix group of users:
+python3 evaluation_gender.py  -clf svm --seed 1 --method gender-selection --training_data_ratio 0.8 --user_specific_numbers 9 9 9 9 --use_eye_config BOTH_AVG_FEAT --ivt_threshold 50 --feature_number 4 --feature_list 'mixed_predict_gender'
+
+2. Non-Dyslexic group evaluation example:
+=========================================
+Run the gender prediction using svm classifier in 38 non_dyslexic group of participants:
+python3 evaluation_gender.py  -clf svm --seed 1 --method gender-selection --training_data_ratio 0.8 --user_specific_numbers 0 0 19 19 --use_eye_config BOTH_AVG_FEAT --ivt_threshold 50 --feature_number 4 --feature_list 'healthy_gender_prediction_features'
+
+
+3. Dyslexic Group evaluation example:
+=====================================
+Run the gender prediction in 38 dyslexic group of participants:
+python3 evaluation_gender.py  -clf svm --seed 1 --method gender-selection --training_data_ratio 0.8 --user_specific_numbers 19 19 0 0 --use_eye_config BOTH_AVG_FEAT --ivt_threshold 50 --feature_number 4 --feature_list 'dyslexic_gender_prediction_features'
+
+
