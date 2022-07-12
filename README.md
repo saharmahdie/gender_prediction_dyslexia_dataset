@@ -1,3 +1,8 @@
+# This code for Gender prediction based on eye movements.
+
+Code for the paper: Gender Prediction of Prepubescent Children via Eye Movements. Sahar Mahdie Klim Al Zaidawi, Martin H.U. Prinzler, Christoph Schröder, Prof. Dr. Gabriel Zachmann, Sebastian Maneth, ICMI Conference Utrecht ’20, Oct 25–29, 2020, Utrecht, Netherlands.
+
+
 # Schau mir in die Augen
 
 People recognition based on eye movements.
